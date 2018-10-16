@@ -14,7 +14,7 @@ pipeline {
       stage('Testing JDK10') {
         parallel {
           stage('Java 10') {
-            agent { label 'jdk10 }
+            agent { label 'jdk10' }
             steps {
               container('jdk10') {
                 sh 'java -version'
