@@ -11,12 +11,12 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-      stage('Testing') {
+      stage('Testing JDK10') {
         parallel {
-          stage('Java 8') {
-            agent { label 'jdk8' }
+          stage('Java 10') {
+            agent { label 'jdk10 }
             steps {
-              container('jdk8') {
+              container('jdk10') {
                 sh 'java -version'
               }
             }
